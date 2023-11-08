@@ -6,9 +6,11 @@ Last modified: 11/07/23
 
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+import config 
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'americaOnline1996!'
+app.config['SECRET_KEY'] = config.flask_auth_key 
 socketio = SocketIO(app)
 
 @app.route('/')
